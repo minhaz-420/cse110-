@@ -1,0 +1,278 @@
+//task10
+hungry;//valid 
+2AB;//invalid,it start's with number 
+312.2//invalid,starts with number 
+MOBILE//valid
+"Ans"//invalid,contains special charecter
+$30//valid
+Yes/NO//invalid
+student-id//invalid,
+A+3//invalid,"+" can't be used 
+'X'//invalid,
+return//invalid
+
+//task11
+public class Main {
+  public static void main(String[] args){
+    //2.1
+    int a = 456;
+    
+    System.out.println(a);
+    
+    //2.2
+    int b = 123;
+    int sum = a+b;
+     System.out.println(sum);
+     
+     //2.3
+     int prod = a*b;
+     int div = a/b;
+     System.out.println(prod);
+     System.out.println(div);
+     
+     //2.4
+     double a1 = 456;
+     double b1 = 123;
+     double sumt = a1+b1;
+     double prodd = a1*b1;
+     double divv = a1/b1; 
+      System.out.println(a1);
+       System.out.println(sumt);
+        System.out.println(prodd);
+         System.out.println(divv);
+         
+         //2.5
+         int a_1 = 456;
+         double b_1 = 123;
+         double summ = a_1+b_1;
+         double product = a_1*b_1;
+         double division = a_1/b_1;
+        System.out.println(a_1);
+        System.out.println(summ);
+        System.out.println(product);
+        System.out.println(division);
+        
+        //2.6
+        String a2 = 456;
+        String b2 = 123;
+        int sum1 = a2+b2;
+        System.out.println(sum1);
+        
+        int a3 = 456;
+        String b3 = 123;
+        int sum2 = a3+b3;
+         System.out.println(sum2);  
+         
+         String a4 = 456;
+         int b4 = 123;
+         int sum3 = a4+b4;
+          System.out.println(sum3);
+  }
+}
+
+
+
+
+//task12
+public class Main {
+  public static void main(String[] args){
+    int r = 4;
+    double circum = 2*Math.PI*r;
+    double area = Math.PI*r*r;
+    
+    System.out.println(circum);
+    System.out.println(area);
+  
+  }
+
+}
+
+
+//task13
+public class Main {
+  public static void main(String[] args){
+    int a = 1023;
+    int f = a%100;
+    
+    System.out.println(f);
+    
+  
+  }
+
+}
+
+
+
+
+
+
+//task14
+public class Main {
+  public static void main(String[] args){
+    double inch = 1000;
+    double meter = inch*0.0254;
+    
+    System.out.println(meter);
+    
+  
+  }
+
+}
+
+
+
+
+//task15a
+
+public class Main{
+
+  public static void main(String[] args){
+  
+    int a = 15;
+    int b = 10;
+    int temp = a;
+      a = b;
+      b = temp;
+  
+  System.out.println(a);
+  System.out.println(b);
+  
+  
+  }
+
+
+}
+
+//task15b
+public class Main{
+
+  public static void main(String[] args){
+  
+    int a = 15;
+    int b = 10;
+    a = a-b;
+    b = a+b;
+    a = b-a;
+    
+    
+  
+  System.out.println(a);
+  System.out.println(b);
+  
+  
+  }
+
+
+}
+
+//task16
+public class Main{
+
+  public static void main(String[] args){
+   
+    double min = 3456789;
+    double day;
+    day = min/60/24;
+    
+    int days = (int) day%365;
+    int year = (int) day/365;
+    
+    
+  
+  System.out.println(days);
+  System.out.println(year);
+  
+  
+  }
+}
+
+//task17
+public class Main{
+
+  public static void main(String[] args){
+   int a;
+   int b; 
+   int c;
+    a = 2;
+    b = 5;
+    c = 8;
+    int d;
+    d = (2*b)*((c-a)/3)+7;
+    
+    
+    
+  
+  System.out.println(d);
+ 
+  
+  
+  }
+
+
+}
+
+
+//task18
+public class Main{
+
+  public static void main(String[] args){
+   int stu_id = 24201337;
+   
+   int D = stu_id%100;
+   int l = D%10;
+  int sl = D/10;
+     
+     System.out.println(l);
+     System.out.println(sl);
+ 
+  }
+
+
+}
+
+//task19
+public class Main{
+
+  public static void main(String[] args){
+    
+    int a = 8;
+    int b = 3;
+    int c = a/2;
+    int f = c*c+b*b;
+    double d = Math.sqrt(f);
+    double circum = (int) 6*d;
+    int at = 1/2*(b+c);
+    int t4 = at*4;
+    double rect = (int) a*d;
+    double area = (int) t4+rect;
+    
+    
+  
+     System.out.println(circum);
+     System.out.println(area);
+ 
+  }
+
+}
+
+//task20
+public class Main {
+  public static void main(String[] args){
+    double a = 4.5;
+    double b = 9.5;
+    double c = Math.sqrt(a*a+b*b);
+    double sinA = a/c;
+    double cosA = b/c;
+    double sinB = b/c;
+    double cosB = a/c;
+    
+    System.out.println(sinA);
+    System.out.println(cosA);
+    System.out.println(sinB);
+    System.out.println(cosB);
+  
+  }
+
+}
+
+

@@ -1,0 +1,356 @@
+//Task 01
+public class Main{
+   public static void evenChecker(int num)
+  {
+    if(num%2 == 0)
+    {
+      System.out.println("Even!!");
+    }
+    else
+    {
+      System.out.println("Odd!!");
+    }
+  }
+ 
+  public static boolean isEven (int number)
+  {
+    return (number%2==0);
+  }
+  public static boolean isPos(int numberr)
+  {
+    return (numberr>0);
+  }
+  public static void sequence (int n)
+  {
+    if(isPos(n))
+    {
+      for(int i = 0;i<=n ;i++){
+        if(isEven(i)){
+          System.out.print(i+" ");
+        }
+      }
+    }
+    else
+    {
+      for(int i = n;i<0; i++){
+        if(!isEven(i)){
+          System.out.print(i+" ");
+        }
+      }
+    }
+    System.out.println();
+  }
+   public static void main(String[]args)
+  {
+    evenChecker(10);
+    evenChecker(17);
+    
+    boolean result1 = isEven(10);
+    System.out.println(result1);
+    
+    boolean result2 = isEven(17);
+    System.out.println(result2);
+    
+    boolean result3 = isPos(-5);
+    System.out.println(result3);
+    
+    boolean result4 = isPos(12);
+    System.out.println(result4);
+    
+    sequence(10);
+    sequence(-7);
+    sequence(7);
+    sequence(-8);
+  }
+}
+//Task 02
+ public class Main
+ {
+  public static double circleArea(int r)
+  {
+    return (Math.PI*Math.pow(r,2)); 
+  }
+  public static double sphereVolume(int l)
+  {
+    return (4.0/3.0*Math.PI*Math.pow(l,3));
+  }
+  public static void findSpace (int r,String s)
+  {
+    if(s.equals("circle"))
+    {
+      System.out.println(circleArea(r/2));
+      
+    }
+    else if(s.equals("sphere"))
+    {
+     System.out.println (sphereVolume(r/2));
+    }
+    else
+    {
+      System.out.println("Wrong parameter");
+    }
+  }
+  public static void main(String[]args)
+  {
+    double area = circleArea(5);
+    System.out.println(area);
+    
+    double volume = sphereVolume(5);
+    System.out.println(volume);
+    findSpace(10,"circle");
+    findSpace(5,"sphere");
+    findSpace(10,"square");
+  }
+}
+//Task 03
+public class Main
+{
+  public static boolean isTriangle(int a,int b,int c)
+  {
+    if(a+b>c && a+c>b && b+c>a)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+  public static void triArea(int a,int b, int c)
+  {
+    int s = (a+b+c)/2;
+    if(isTriangle(a,b,c))
+    {
+      System.out.println(Math.pow((s*(s-a)*(s-b)*(s-c)),0.5));
+    }
+    else
+    {
+      System.out.println("Can't form triangle");
+    }
+  }
+   
+  public static void main(String[]args)
+  {
+    boolean res1 = isTriangle(7,5,10);
+    System.out.println(res1);
+    
+    boolean res2 = isTriangle(3,2,1);
+    System.out.println(res2);
+    
+    triArea(3,2,1);
+    triArea(7,5,10);
+  }
+}
+//Task 04
+import java.util.Scanner;
+public class Main
+{
+  public static boolean isPrime(int a)
+  {
+    int count = 0;
+    for (int i = 1; i<= a ; i++)
+    {
+      if(a%i== 0)
+      {
+        count++;
+      }
+    }
+      if(count == 2)
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+  }
+  public static boolean isPerfect(int a)
+  {
+  int sum = 0;
+    for(int i = 1; i< a ;i++)
+    {
+      if(a%i == 0)
+      {
+        sum = sum+i;
+      }
+    }
+    if (sum == a)
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+  }
+  public static int special_sum(int n)
+  {
+    int temp = 0;
+    for(int i = 0 ; i<n ; i++)
+    {
+      if(isPrime(i) || isPerfect(i))
+      {
+        temp = temp+i;
+      }
+    }
+    return temp;
+  }
+  
+  public static void main(String[]args)
+  {
+    boolean check1 = isPrime(7);
+    System.out.println(check1);
+    
+    boolean check2 = isPrime(15);
+    System.out.println(check2);
+    
+    boolean check3 = isPerfect(6);
+    System.out.println(check3);
+    
+    boolean check4 = isPerfect(33);
+    System.out.println(check4);
+    
+    Scanner sc = new Scanner(System.in);
+    int a  = sc.nextInt();
+    int result = special_sum(a);
+    System.out.println(result);
+  }
+}
+//Task 05
+public class Main{
+  public static void showDots(int a)
+  {
+    
+    for(int i = 0; i<a ;i++){
+      
+        System.out.print(".");
+    }
+    System.out.println();
+  }
+  public static void show_palindrome(int b)
+  {
+    String temp1 ="";
+    String temp2 ="";
+    for(int i = 1; i<=b;i++){
+      temp1= temp1+i;
+    }
+    for(int i = b-1; i>0 ; i--)
+    {
+      temp2 = temp2+i;
+    }
+    String temp3 = temp1+temp2;
+    System.out.print(temp3);
+    System.out.println();
+  }
+  public static void showDiamond(int a)
+  {
+     for (int i = 1; i <= a; i++) {
+            for (int j = 0; j < a - i; j++) {
+                System.out.print(".");
+            }
+            String temp1 = "";
+            for (int j = 1; j <= i; j++) {
+                temp1 += j;
+            }
+            for (int j = i - 1; j >= 1; j--) {
+                temp1 += j;
+            }
+            System.out.print(temp1);
+
+            for (int j = 0; j < a - i; j++) {
+                System.out.print(".");
+            }
+            System.out.println();
+     }
+        for (int i = a - 1; i >= 1; i--) {
+            for (int j = 0; j < a - i; j++) {
+                System.out.print(".");
+            }
+            String temp1 = "";
+            for (int j = 1; j <= i; j++) {
+                temp1 += j;
+            }
+            for (int j = i - 1; j >= 1; j--) {
+                temp1 += j;
+            }
+            System.out.print(temp1);
+            
+            for (int j = 0; j < a - i; j++) {
+                System.out.print(".");
+            }
+            System.out.println();
+        }
+  }
+  
+  public static void main(String[]args)
+  {
+    showDots(5);
+    showDots(3);
+    
+    show_palindrome(5);
+    show_palindrome(3);
+    
+    showDiamond(5);
+    showDiamond(3);
+    
+  }
+}
+//Task 06
+public class Main {
+    public static double calcTax(int a, int b) {
+        if (a < 18 || b < 10000) {
+            return 0.0; 
+        } 
+        else if (a >= 18 && (b >= 10000 && b <= 20000)) {
+            return (b * (7.0 / 100)); 
+        } 
+        else {
+          return (b* (14/100));  
+        }
+        
+    }
+
+    public static void main(String[] args) {
+        double t1 = calcTax(16, 20000);
+        System.out.println(t1);
+        
+        double t2 = calcTax(20,18000);
+        System.out.println(t2);
+    }
+}
+//Task 08
+import java.util.Scanner;
+public class Main {
+  public static void reverseDigits(int n) {
+    if (n == 0)
+      return ;
+    System.out.println(n % 10);
+    reverseDigits(n / 10);
+  }
+  
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    reverseDigits(n);
+    sc.close();
+  }
+}
+//Task 09
+import java.util.Scanner;
+public class Main{
+  
+  public static int sumDigits(int i){
+    int sum =0;
+    if ( i == 0){
+    return 0;
+    }
+    sum += i % 10;
+    return sum + sumDigits ( i / 10);
+  }
+  public static void main(String[]args){
+    Scanner sc = new Scanner (System.in);
+    int n = sc.nextInt();
+    int x = sumDigits(n);
+    System.out.println(x);
+  }
+}

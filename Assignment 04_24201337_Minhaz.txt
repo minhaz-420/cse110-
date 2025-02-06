@@ -1,0 +1,267 @@
+//Task 01
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        int input, max = -99999, min =99999, avg = 0, sum = 0, num, count = 0;
+        input = sc.nextInt();
+
+        for(int i = 1; i<= input; i++){
+            num = sc.nextInt();
+
+            if(num > 0 && num % 2 == 0){
+                if(num > max){
+                  max = num; 
+                }
+                if(num < min){ 
+                  min = num;
+                }
+                count++;
+                sum += num;
+            }
+
+            if(count == 0){
+                avg = 0; 
+            }
+            else{
+                avg = sum / count;
+            }
+
+            
+        }
+        System.out.println("Max: " + max + "\nMin: " + min + "\nAverage: " + avg);
+        sc.close();
+    }
+}
+//Task 02 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num,  num_sq;
+        while(true){
+            System.out.print("Enter number: ");
+            num = sc.nextInt();
+            if(num >= 0){
+               num_sq = num*num;
+               System.out.println(num_sq);
+            }
+            else{
+                break;
+            }
+        }
+        sc.close();
+    }
+}
+//Task 03
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+       System.out.print("Enter an integer: ");
+       int x = sc.nextInt();
+       
+       int number, positive = 0 , negetive = 0, i=1 ;
+       while ( i<= x){
+          System.out.print("Enter number: "+i);
+          number = sc.nextInt();
+          if(number>=0){
+            positive++;
+          }
+          else{
+            negetive++;
+          }
+          i++;
+       }
+       System.out.println(positive+" Non-negative Numbers");
+       System.out.println(negetive+" Negative Numbers");
+       sc.close();
+    }
+}
+//Task 04
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N ,number =2 , divisor, prime_c= 0;
+        N = sc.nextInt();
+
+        while( prime_c<N){
+            divisor = 0;
+            for(int x = 1; x<= number; x++){
+                if(number % x == 0){
+                    divisor++;
+                }
+            }
+            if(divisor == 2){
+                prime_c++;
+                System.out.println(number);
+            }
+            number++;
+            
+        }
+        sc.close();
+    }
+}
+//Task 05
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N,y = 0, sum = 0;
+        System.out.print("The value of N: "); 
+        N = sc.nextInt();
+         
+         for(int i = 1; i<=N; i++){
+           sum = (i*(i+1))/2;
+           y-= sum;
+         }
+         System.out.println("The value of y: "+y);
+         sc.close();
+    }
+}
+//Task 06
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = 0;
+        int div = 0;
+        while(true){
+            System.out.print("Enter number: ");
+            n = sc.nextInt();
+            if(n % 2 == 1){
+                break;
+            }else if(n > 0 ){
+                for(int i = 1; i <= n; i++){
+                    if(n % i == 0){
+                        div++;
+                    }
+                }
+                System.out.println(n + " has " + div + " divisors");
+                div = 0;
+            }
+        }
+
+        sc.close();
+    }
+}
+//Task 07
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int case_num = sc.nextInt();
+        int sum =0;
+        int  count = 0;
+        for(int i =1; i<=case_num ; i++){
+          int X = sc.nextInt();
+          int Y = sc.nextInt();
+          sum = 0;
+          count = 0;
+          
+          while(count<Y){
+            if(X%2!=0){
+              sum = sum+X;
+              count++;
+            }
+            X++;
+          }
+          System.out.println(sum);
+        }
+     sc.close();
+    }
+}
+//Task 08
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int col = sc.nextInt();
+        int row = sc.nextInt();
+        for(int i = 1; i<=row ; i++){
+          for(int c =1;c<=col; c++){
+           System.out.print(c+" ");
+          }
+         System.out.println();
+        }
+   
+    }
+}
+//Task 09
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int rows = sc.nextInt();
+
+        for(int i = 1; i <= rows; i++){
+            for(int spaces = 1; spaces<= (rows-i)*2; spaces++){
+                System.out.print(" ");
+            }
+            for(int numbers = 1; numbers <= i; numbers++){
+                System.out.print(numbers +" ");
+            }
+            System.out.println();
+        }
+        sc.close();
+    }
+}
+//Task 10
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int row =sc.nextInt();
+        for (int r_c = 1; r_c<=row; r_c++){
+          for(int s = 1; s<=row-r_c; s++){
+            System.out.print(" ");
+          }
+          for(int c_c = 1; c_c<=2*r_c-1;c_c++){
+            System.out.print(c_c);
+          }
+          System.out.println();
+        }
+        sc.close();
+    }
+}
+//task 11 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Start: ");
+        int start = sc.nextInt();
+        System.out.println("End: ");
+        int end = sc.nextInt();
+        int sum = 0;
+        System.out.println("Amstrong numbers: ");
+        for(int i = start; i<=end ; i++){
+          int temp1 = i;
+          int temp2 = i;
+          int count = 0;
+          
+          while (temp2!=0){
+            temp2 = temp2/10;
+            count++;
+          }
+          while (i>0){
+            int dig = i%10;
+            sum+=(int)Math.pow(dig,count);
+            i = i/10;
+          }
+          if(sum==temp1){
+            System.out.println(sum);
+          }
+          sum = 0;
+          i = temp1;
+        }
+        sc.close();
+ 
+    }
+}

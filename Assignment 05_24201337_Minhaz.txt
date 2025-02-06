@@ -1,0 +1,236 @@
+//Task 01
+import java.util.Scanner;
+public class Main{
+  public static void main(String[]args){
+    Scanner sc = new Scanner (System.in);
+    String s = sc.nextLine(); 
+    String s2 = "";
+    for (int i = 0; i< s.length(); i++){
+      char char1 = s.charAt(i);
+      
+      if(char1>='a' && char1<='z'){
+       char1 = (char)(char1 - 32);
+        s2 =s2+char1;
+      }
+      else {
+        s2 =s2+char1;
+      }
+    }
+    System.out.print(s2);
+    sc.close();
+  }
+}
+//Task 02
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s1 = sc.nextLine();
+        String s2 = "";
+        
+         for(int i = 1; i <=s1.length(); i++){
+           int new1 = s1.length() -i;
+           char new2 = s1.charAt(new1);
+           s2 = s2+new2;
+          }
+        if(s2.equals(s1)){
+          System.out.println("true");
+        }
+        else{
+          System.out.println("false");
+        }
+        sc.close();
+    }
+}
+//Task 03
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s1 = sc.nextLine();
+        String div_by = sc.nextLine();
+        String empty = "";
+        
+        for(int i = 0; i<s1.length(); i++){
+           char w1 = s1.charAt(i);
+          if(w1!= div_by.charAt(0)){
+            empty = empty+w1;
+          }
+          else{
+            System.out.println(empty);
+            empty = "";
+          }
+        }
+        System.out.println(empty);
+        sc.close();
+    }
+}
+//Task 04
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s1 = sc.nextLine();
+        String s2 = "";
+        for (int i=0; i<s1.length(); i++){
+          int new1 = s1.length()-1-i;
+          char new2 = s1.charAt(new1);
+          s2 = s2+new2;
+        }
+        System.out.print(s2);
+         sc.close();
+    }
+}
+//Task 05
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String pass = sc.nextLine();
+        int vow =0;
+        int conso = 0;
+        
+        for(int i = 0; i<pass.length(); i++){
+          char word = pass.charAt(i);
+          if (word=='a' || word=='e' || word=='i' || word=='o'  || word=='u'){
+            vow++;
+          }
+          else {
+            conso++;
+          }
+        }
+        if((vow>0 && vow%3==0)&&(conso>0 && conso%5==0)){
+          System.out.print("Aaarr! Me Plunder!!");
+        }
+        else{
+          System.out.print("Bilmey! No Plunder!!");
+        }
+    sc.close();
+    }
+}
+//Task 06
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        String tempo ="";
+        String rev = "";
+        
+        for(int i = 0; i<input.length(); i++){
+          char ch1 = input.charAt(i);
+          if (ch1!=' '){
+            tempo = tempo+ch1;
+          }
+          else{
+            rev =" "+tempo+rev;
+            tempo = "";
+            
+          }
+        }
+        rev = tempo+rev;
+        System.out.print(rev);
+    
+    sc.close();
+    }
+}
+//Task 07
+import java.util.Scanner;
+public class Main{
+  public static void main(String[]args){
+    Scanner sc = new Scanner(System.in);
+    String s1 = sc.nextLine();
+    String s2 = sc.nextLine();
+    String empty = "";
+    boolean f = true;
+    
+    int i = 0;
+    while( i< s1.length()){
+      for(int j = 0; j<s2.length();j++)
+      {
+        if(s1.charAt(i)==s2.charAt(j))
+        {
+          f = false;
+        }
+      }
+      if(f == true)
+      {
+        empty += s1.charAt(i);
+      }
+      f = true;
+      i++;
+    }
+    int x = 0;
+    while( x< s2.length()){
+      for(int y = 0; y<s1.length();y++)
+      {
+        if(s2.charAt(x)==s1.charAt(y))
+        {
+          f = false;
+        }
+      }
+      if(f == true)
+      {
+        empty += s2.charAt(x);
+      }
+      f = true;
+      x++;
+    }
+    String empty2 = "";
+    int length = empty.length();
+    
+    for(int a = 0 ; a<length;a++)
+    {
+      int convert = (int) empty.charAt(a);
+      if (convert>=65 && convert<=90)
+      {
+      }
+      else{
+        int new1 = convert-32;
+        empty2+=(char)new1;
+      }
+    }
+    System.out.println(empty2);
+    sc.close();
+  }
+}
+//Task 09
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String pass = sc.nextLine();
+        int up_count = 0;
+        int low_count = 0;
+        int sp_count =0;
+        int dig_count = 0;
+        
+        if (pass.length() >=8){
+          for(int i = 0; i<pass.length(); i++){
+            char s1 = pass.charAt(i);
+            if ( s1>='A' && s1<='Z'){
+              up_count++;
+            }
+            else if (s1>='a' && s1<='z'){
+              low_count++;
+            }
+            else if(s1>='0' && s1<='9'){
+              dig_count++;
+            }
+            else{
+              sp_count++;
+            }
+          }
+          if(up_count>=1 && low_count>=1 && dig_count>=1 && sp_count>=1){
+            System.out.print("True");
+          }
+          else{
+            System.out.print("False");
+          } 
+        }
+        else {
+          System.out.print("False");
+        }
+    sc.close();
+    }
+}
